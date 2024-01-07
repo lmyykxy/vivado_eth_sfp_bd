@@ -1,0 +1,873 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x4E89A9096161E9D",
+      "device": "xc7k325tffg676-2",
+      "gen_directory": "../../../../K7_ETH.gen/sources_1/bd/ETH",
+      "name": "ETH",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ethernet_mac_A": "",
+      "ethernet_mac_B": "",
+      "proc_sys_reset_0": "",
+      "axis_data_fifo_0": "",
+      "axis_data_fifo_1": "",
+      "axis_data_fifo_2": "",
+      "axis_data_fifo_3": "",
+      "proc_sys_reset_1": "",
+      "proc_sys_reset_2": "",
+      "xlconstant_0": ""
+    },
+    "interface_ports": {
+      "rgmii_A": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:rgmii:1.0",
+        "vlnv": "xilinx.com:interface:rgmii_rtl:1.0",
+        "port_maps": {
+          "RD": {
+            "physical_name": "rgmii_A_rd",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "RX_CTL": {
+            "physical_name": "rgmii_A_rx_ctl",
+            "direction": "I"
+          },
+          "RXC": {
+            "physical_name": "rgmii_A_rxc",
+            "direction": "I"
+          },
+          "TD": {
+            "physical_name": "rgmii_A_td",
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "TX_CTL": {
+            "physical_name": "rgmii_A_tx_ctl",
+            "direction": "O"
+          },
+          "TXC": {
+            "physical_name": "rgmii_A_txc",
+            "direction": "O"
+          }
+        }
+      },
+      "rgmii_B": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:rgmii:1.0",
+        "vlnv": "xilinx.com:interface:rgmii_rtl:1.0",
+        "port_maps": {
+          "RD": {
+            "physical_name": "rgmii_B_rd",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "RX_CTL": {
+            "physical_name": "rgmii_B_rx_ctl",
+            "direction": "I"
+          },
+          "RXC": {
+            "physical_name": "rgmii_B_rxc",
+            "direction": "I"
+          },
+          "TD": {
+            "physical_name": "rgmii_B_td",
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "TX_CTL": {
+            "physical_name": "rgmii_B_tx_ctl",
+            "direction": "O"
+          },
+          "TXC": {
+            "physical_name": "rgmii_B_txc",
+            "direction": "O"
+          }
+        }
+      },
+      "eth_A_m_axis_rx": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/ethernet_mac_A/rx_mac_aclk",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "125000000",
+            "value_src": "user_prop"
+          },
+          "HAS_TKEEP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "HAS_TLAST": {
+            "value": "1",
+            "value_src": "default_prop"
+          },
+          "HAS_TREADY": {
+            "value": "1",
+            "value_src": "default"
+          },
+          "HAS_TSTRB": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "1",
+            "value_src": "default"
+          },
+          "TDEST_WIDTH": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "TID_WIDTH": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "TUSER_WIDTH": {
+            "value": "1",
+            "value_src": "default_prop"
+          }
+        },
+        "port_maps": {
+          "TDATA": {
+            "physical_name": "eth_A_m_axis_rx_tdata",
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "TLAST": {
+            "physical_name": "eth_A_m_axis_rx_tlast",
+            "direction": "O"
+          },
+          "TUSER": {
+            "physical_name": "eth_A_m_axis_rx_tuser",
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "TVALID": {
+            "physical_name": "eth_A_m_axis_rx_tvalid",
+            "direction": "O"
+          },
+          "TREADY": {
+            "physical_name": "eth_A_m_axis_rx_tready",
+            "direction": "I"
+          }
+        }
+      },
+      "eth_A_s_axis_tx": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/ethernet_mac_A/rx_mac_aclk",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "125000000",
+            "value_src": "user_prop"
+          },
+          "HAS_TKEEP": {
+            "value": "0"
+          },
+          "HAS_TLAST": {
+            "value": "0"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "1"
+          },
+          "TDEST_WIDTH": {
+            "value": "0"
+          },
+          "TID_WIDTH": {
+            "value": "0"
+          },
+          "TUSER_WIDTH": {
+            "value": "0"
+          }
+        },
+        "port_maps": {
+          "TVALID": {
+            "physical_name": "eth_A_s_axis_tx_tvalid",
+            "direction": "I"
+          },
+          "TREADY": {
+            "physical_name": "eth_A_s_axis_tx_tready",
+            "direction": "O"
+          },
+          "TDATA": {
+            "physical_name": "eth_A_s_axis_tx_tdata",
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "eth_B_m_axis_rx": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/ethernet_mac_B/rx_mac_aclk",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "125000000",
+            "value_src": "user_prop"
+          },
+          "HAS_TKEEP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "HAS_TLAST": {
+            "value": "1",
+            "value_src": "default_prop"
+          },
+          "HAS_TREADY": {
+            "value": "1",
+            "value_src": "default"
+          },
+          "HAS_TSTRB": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "1",
+            "value_src": "default"
+          },
+          "TDEST_WIDTH": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "TID_WIDTH": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "TUSER_WIDTH": {
+            "value": "1",
+            "value_src": "default_prop"
+          }
+        },
+        "port_maps": {
+          "TDATA": {
+            "physical_name": "eth_B_m_axis_rx_tdata",
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "TREADY": {
+            "physical_name": "eth_B_m_axis_rx_tready",
+            "direction": "I"
+          },
+          "TVALID": {
+            "physical_name": "eth_B_m_axis_rx_tvalid",
+            "direction": "O"
+          },
+          "TLAST": {
+            "physical_name": "eth_B_m_axis_rx_tlast",
+            "direction": "O"
+          },
+          "TUSER": {
+            "physical_name": "eth_B_m_axis_rx_tuser",
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          }
+        }
+      },
+      "eth_B_s_axis_tx": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/ethernet_mac_B/rx_mac_aclk",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "125000000",
+            "value_src": "user_prop"
+          },
+          "HAS_TKEEP": {
+            "value": "0"
+          },
+          "HAS_TLAST": {
+            "value": "0"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "1"
+          },
+          "TDEST_WIDTH": {
+            "value": "0"
+          },
+          "TID_WIDTH": {
+            "value": "0"
+          },
+          "TUSER_WIDTH": {
+            "value": "0"
+          }
+        },
+        "port_maps": {
+          "TDATA": {
+            "physical_name": "eth_B_s_axis_tx_tdata",
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "TREADY": {
+            "physical_name": "eth_B_s_axis_tx_tready",
+            "direction": "O"
+          },
+          "TVALID": {
+            "physical_name": "eth_B_s_axis_tx_tvalid",
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "ports": {
+      "sys_clk_200m": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "sys_rst_n"
+          },
+          "CLK_DOMAIN": {
+            "value": "ETH_sys_clk_50m",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "200000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "gtx_clk_125m": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ETH_gtxclk_125m",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "125000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "eth_A_clk_125m": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "eth_A_s_axis_tx:eth_A_m_axis_rx"
+          },
+          "ASSOCIATED_RESET": {
+            "value": "eth_A_rst_n"
+          },
+          "CLK_DOMAIN": {
+            "value": "/ethernet_mac_A/rx_mac_aclk",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "125000000",
+            "value_src": "user_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "eth_B_clk_125m": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "eth_B_s_axis_tx:eth_B_m_axis_rx"
+          },
+          "ASSOCIATED_RESET": {
+            "value": "eth_B_rst_n"
+          },
+          "CLK_DOMAIN": {
+            "value": "/ethernet_mac_B/rx_mac_aclk",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "125000000",
+            "value_src": "user_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "eth_A_rst_n": {
+        "type": "rst",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "eth_B_rst_n": {
+        "type": "rst",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "sys_rst_n": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "eth_rst": {
+        "direction": "O",
+        "left": "1",
+        "right": "0"
+      }
+    },
+    "components": {
+      "ethernet_mac_A": {
+        "vlnv": "xilinx.com:ip:tri_mode_ethernet_mac:9.0",
+        "xci_name": "ETH_tri_mode_ethernet_mac_0_0",
+        "xci_path": "ip\\ETH_tri_mode_ethernet_mac_0_0\\ETH_tri_mode_ethernet_mac_0_0.xci",
+        "inst_hier_path": "ethernet_mac_A",
+        "parameters": {
+          "Enable_MDIO": {
+            "value": "false"
+          },
+          "Frame_Filter": {
+            "value": "false"
+          },
+          "MAC_Speed": {
+            "value": "1000_Mbps"
+          },
+          "Management_Frequency": {
+            "value": "200"
+          },
+          "Management_Interface": {
+            "value": "true"
+          },
+          "Physical_Interface": {
+            "value": "RGMII"
+          },
+          "Statistics_Counters": {
+            "value": "false"
+          },
+          "SupportLevel": {
+            "value": "1"
+          }
+        }
+      },
+      "ethernet_mac_B": {
+        "vlnv": "xilinx.com:ip:tri_mode_ethernet_mac:9.0",
+        "xci_name": "ETH_tri_mode_ethernet_mac_1_0",
+        "xci_path": "ip\\ETH_tri_mode_ethernet_mac_1_0\\ETH_tri_mode_ethernet_mac_1_0.xci",
+        "inst_hier_path": "ethernet_mac_B",
+        "parameters": {
+          "Enable_MDIO": {
+            "value": "false"
+          },
+          "Frame_Filter": {
+            "value": "false"
+          },
+          "MAC_Speed": {
+            "value": "1000_Mbps"
+          },
+          "Management_Frequency": {
+            "value": "200"
+          },
+          "Physical_Interface": {
+            "value": "RGMII"
+          },
+          "Statistics_Counters": {
+            "value": "false"
+          },
+          "SupportLevel": {
+            "value": "0"
+          }
+        }
+      },
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "ETH_proc_sys_reset_0_0",
+        "xci_path": "ip\\ETH_proc_sys_reset_0_0\\ETH_proc_sys_reset_0_0.xci",
+        "inst_hier_path": "proc_sys_reset_0"
+      },
+      "axis_data_fifo_0": {
+        "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+        "xci_name": "ETH_axis_data_fifo_0_0",
+        "xci_path": "ip\\ETH_axis_data_fifo_0_0\\ETH_axis_data_fifo_0_0.xci",
+        "inst_hier_path": "axis_data_fifo_0"
+      },
+      "axis_data_fifo_1": {
+        "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+        "xci_name": "ETH_axis_data_fifo_0_1",
+        "xci_path": "ip\\ETH_axis_data_fifo_0_1\\ETH_axis_data_fifo_0_1.xci",
+        "inst_hier_path": "axis_data_fifo_1",
+        "parameters": {
+          "IS_ACLK_ASYNC": {
+            "value": "1"
+          }
+        }
+      },
+      "axis_data_fifo_2": {
+        "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+        "xci_name": "ETH_axis_data_fifo_0_2",
+        "xci_path": "ip\\ETH_axis_data_fifo_0_2\\ETH_axis_data_fifo_0_2.xci",
+        "inst_hier_path": "axis_data_fifo_2",
+        "parameters": {
+          "IS_ACLK_ASYNC": {
+            "value": "1"
+          }
+        }
+      },
+      "axis_data_fifo_3": {
+        "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+        "xci_name": "ETH_axis_data_fifo_1_0",
+        "xci_path": "ip\\ETH_axis_data_fifo_1_0\\ETH_axis_data_fifo_1_0.xci",
+        "inst_hier_path": "axis_data_fifo_3"
+      },
+      "proc_sys_reset_1": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "ETH_proc_sys_reset_1_1",
+        "xci_path": "ip\\ETH_proc_sys_reset_1_1\\ETH_proc_sys_reset_1_1.xci",
+        "inst_hier_path": "proc_sys_reset_1"
+      },
+      "proc_sys_reset_2": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "ETH_proc_sys_reset_0_2",
+        "xci_path": "ip\\ETH_proc_sys_reset_0_2\\ETH_proc_sys_reset_0_2.xci",
+        "inst_hier_path": "proc_sys_reset_2"
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "ETH_xlconstant_0_0",
+        "xci_path": "ip\\ETH_xlconstant_0_0\\ETH_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "3"
+          },
+          "CONST_WIDTH": {
+            "value": "2"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "S_AXIS_0_1": {
+        "interface_ports": [
+          "eth_B_s_axis_tx",
+          "axis_data_fifo_2/S_AXIS"
+        ]
+      },
+      "axis_data_fifo_0_M_AXIS": {
+        "interface_ports": [
+          "eth_A_m_axis_rx",
+          "axis_data_fifo_0/M_AXIS"
+        ]
+      },
+      "axis_data_fifo_1_M_AXIS": {
+        "interface_ports": [
+          "axis_data_fifo_1/M_AXIS",
+          "ethernet_mac_A/s_axis_tx"
+        ]
+      },
+      "axis_data_fifo_2_M_AXIS": {
+        "interface_ports": [
+          "axis_data_fifo_2/M_AXIS",
+          "ethernet_mac_B/s_axis_tx"
+        ]
+      },
+      "axis_data_fifo_3_M_AXIS": {
+        "interface_ports": [
+          "eth_B_m_axis_rx",
+          "axis_data_fifo_3/M_AXIS"
+        ]
+      },
+      "eth_A_s_axis_tx_1": {
+        "interface_ports": [
+          "eth_A_s_axis_tx",
+          "axis_data_fifo_1/S_AXIS"
+        ]
+      },
+      "ethernet_mac_A_m_axis_rx": {
+        "interface_ports": [
+          "axis_data_fifo_0/S_AXIS",
+          "ethernet_mac_A/m_axis_rx"
+        ]
+      },
+      "ethernet_mac_B_m_axis_rx": {
+        "interface_ports": [
+          "ethernet_mac_B/m_axis_rx",
+          "axis_data_fifo_3/S_AXIS"
+        ]
+      },
+      "ethernet_mac_B_rgmii": {
+        "interface_ports": [
+          "rgmii_B",
+          "ethernet_mac_B/rgmii"
+        ]
+      },
+      "tri_mode_ethernet_mac_0_rgmii": {
+        "interface_ports": [
+          "rgmii_A",
+          "ethernet_mac_A/rgmii"
+        ]
+      }
+    },
+    "nets": {
+      "ethernet_mac_A_gtx_clk90_out": {
+        "ports": [
+          "ethernet_mac_A/gtx_clk90_out",
+          "ethernet_mac_B/gtx_clk90"
+        ]
+      },
+      "ethernet_mac_A_gtx_clk_out": {
+        "ports": [
+          "ethernet_mac_A/gtx_clk_out",
+          "ethernet_mac_B/gtx_clk"
+        ]
+      },
+      "ethernet_mac_A_rx_mac_aclk": {
+        "ports": [
+          "ethernet_mac_A/rx_mac_aclk",
+          "axis_data_fifo_0/s_axis_aclk",
+          "axis_data_fifo_1/s_axis_aclk",
+          "eth_A_clk_125m",
+          "proc_sys_reset_1/slowest_sync_clk"
+        ]
+      },
+      "ethernet_mac_A_rx_reset": {
+        "ports": [
+          "ethernet_mac_A/rx_reset",
+          "proc_sys_reset_1/ext_reset_in"
+        ]
+      },
+      "ethernet_mac_A_tx_mac_aclk": {
+        "ports": [
+          "ethernet_mac_A/tx_mac_aclk",
+          "axis_data_fifo_1/m_axis_aclk"
+        ]
+      },
+      "ethernet_mac_B_rx_mac_aclk": {
+        "ports": [
+          "ethernet_mac_B/rx_mac_aclk",
+          "eth_B_clk_125m",
+          "axis_data_fifo_3/s_axis_aclk",
+          "axis_data_fifo_2/s_axis_aclk",
+          "proc_sys_reset_2/slowest_sync_clk"
+        ]
+      },
+      "ethernet_mac_B_rx_reset": {
+        "ports": [
+          "ethernet_mac_B/rx_reset",
+          "proc_sys_reset_2/ext_reset_in"
+        ]
+      },
+      "ethernet_mac_B_tx_mac_aclk": {
+        "ports": [
+          "ethernet_mac_B/tx_mac_aclk",
+          "axis_data_fifo_2/m_axis_aclk"
+        ]
+      },
+      "gtx_clk_125m_1": {
+        "ports": [
+          "gtx_clk_125m",
+          "ethernet_mac_A/gtx_clk"
+        ]
+      },
+      "proc_sys_reset_0_peripheral_aresetn": {
+        "ports": [
+          "proc_sys_reset_0/peripheral_aresetn",
+          "ethernet_mac_B/s_axi_resetn",
+          "ethernet_mac_A/s_axi_resetn",
+          "ethernet_mac_A/glbl_rstn",
+          "ethernet_mac_A/rx_axi_rstn",
+          "ethernet_mac_A/tx_axi_rstn",
+          "ethernet_mac_B/glbl_rstn",
+          "ethernet_mac_B/rx_axi_rstn",
+          "ethernet_mac_B/tx_axi_rstn"
+        ]
+      },
+      "proc_sys_reset_1_peripheral_aresetn": {
+        "ports": [
+          "proc_sys_reset_1/peripheral_aresetn",
+          "axis_data_fifo_0/s_axis_aresetn",
+          "axis_data_fifo_1/s_axis_aresetn",
+          "eth_A_rst_n"
+        ]
+      },
+      "proc_sys_reset_2_peripheral_aresetn": {
+        "ports": [
+          "proc_sys_reset_2/peripheral_aresetn",
+          "axis_data_fifo_3/s_axis_aresetn",
+          "axis_data_fifo_2/s_axis_aresetn",
+          "eth_B_rst_n"
+        ]
+      },
+      "sys_clk_50m_1": {
+        "ports": [
+          "sys_clk_200m",
+          "ethernet_mac_A/s_axi_aclk",
+          "ethernet_mac_B/s_axi_aclk",
+          "proc_sys_reset_0/slowest_sync_clk",
+          "ethernet_mac_A/refclk"
+        ]
+      },
+      "sys_rst_n_1": {
+        "ports": [
+          "sys_rst_n",
+          "proc_sys_reset_0/ext_reset_in"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "eth_rst"
+        ]
+      }
+    }
+  }
+}

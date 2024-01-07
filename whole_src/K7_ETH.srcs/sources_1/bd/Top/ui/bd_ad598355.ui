@@ -1,0 +1,55 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.04779",
+   "Default View_TopLeft":"199,518",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 threadsafe
+#  -string -flagsOSRD
+preplace port rgmii_A -pg 1 -lvl 3 -x 1290 -y 60 -defaultsOSRD
+preplace port rgmii_B -pg 1 -lvl 3 -x 1290 -y 80 -defaultsOSRD
+preplace port sfp_gtrefclk -pg 1 -lvl 0 -x -40 -y 700 -defaultsOSRD
+preplace port sfp_B -pg 1 -lvl 3 -x 1290 -y 680 -defaultsOSRD
+preplace port sfp_A -pg 1 -lvl 3 -x 1290 -y 700 -defaultsOSRD
+preplace port port-id_sys_clk_50m -pg 1 -lvl 0 -x -40 -y 170 -defaultsOSRD
+preplace port port-id_sys_rst_n -pg 1 -lvl 0 -x -40 -y 210 -defaultsOSRD
+preplace portBus eth_rst -pg 1 -lvl 3 -x 1290 -y 190 -defaultsOSRD
+preplace inst ETH_0 -pg 1 -lvl 2 -x 1020 -y 110 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 2 -x 1020 -y 320 -defaultsOSRD
+preplace inst axis_data_fifo_1 -pg 1 -lvl 2 -x 1020 -y -130 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 580 -y 500 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 580 -y 190 -defaultsOSRD
+preplace inst SFP_0 -pg 1 -lvl 2 -x 1020 -y 750 -defaultsOSRD
+preplace inst axis_data_fifo_2 -pg 1 -lvl 2 -x 1020 -y 950 -defaultsOSRD
+preplace inst axis_data_fifo_3 -pg 1 -lvl 2 -x 1020 -y 500 -defaultsOSRD
+preplace netloc ETH_0_eth_A_clk_125m 1 1 2 790 -250 1240
+preplace netloc ETH_0_eth_A_rst_n 1 1 2 820 -40 1220
+preplace netloc ETH_0_eth_B_clk_125m 1 1 2 800 590 1210
+preplace netloc ETH_0_eth_B_rst_n 1 1 2 800 -240 1230
+preplace netloc ETH_0_eth_rst 1 2 1 N 190
+preplace netloc clk_wiz_0_clk_200m 1 1 1 770 110n
+preplace netloc gtx_clk_125m_1 1 1 1 760 130n
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 0 2 410 120 750
+preplace netloc sys_clk_50m_1 1 0 1 400 170n
+preplace netloc sys_rst_n_1 1 0 1 -20 210n
+preplace netloc SFP_0_sfp_A_rst_n 1 1 2 830 1050 1220
+preplace netloc SFP_0_sfp_A_clk_125m 1 1 2 820 1060 1240
+preplace netloc SFP_0_sfp_B_clk_125m 1 1 2 810 1070 1230
+preplace netloc SFP_0_sfp_B_rst_n 1 1 2 790 1080 1200
+preplace netloc ETH_0_eth_A_m_axis_rx 1 1 2 850 -30 1190
+preplace netloc ETH_0_eth_B_m_axis_rx 1 1 2 820 -230 1210
+preplace netloc ETH_0_rgmii_A 1 2 1 1260J 30n
+preplace netloc ETH_0_rgmii_B 1 2 1 1250J 50n
+preplace netloc axis_data_fifo_0_M_AXIS 1 1 2 840 410 1190
+preplace netloc axis_data_fifo_1_M_AXIS 1 1 2 840 -220 1190
+preplace netloc gtrefclk_0_1 1 0 2 NJ 700 NJ
+preplace netloc SFP_0_sfp_B 1 2 1 NJ 680
+preplace netloc SFP_0_sfp_A 1 2 1 NJ 700
+preplace netloc SFP_0_sfp_A_m_axis_rx 1 1 2 840 620 1190
+preplace netloc axis_data_fifo_2_M_AXIS 1 1 2 850 1040 1190
+preplace netloc axis_data_fifo_3_M_AXIS 1 1 2 830 610 1190
+preplace netloc SFP_0_sfp_B_m_axis_rx 1 1 2 780 600 1220
+levelinfo -pg 1 -40 580 1020 1290
+pagesize -pg 1 -db -bbox -sgen -180 -260 1410 1090
+"
+}
+0
